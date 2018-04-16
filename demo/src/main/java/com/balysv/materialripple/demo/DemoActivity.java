@@ -25,21 +25,25 @@ public class DemoActivity extends ActionBarActivity implements View.OnClickListe
 
         // static initialization
         View view = findViewById(R.id.ripple_layout_2);
-        MaterialRippleLayout.on(view)
-            .rippleColor(Color.parseColor("#FF0000"))
-            .rippleAlpha(0.2f)
-            .rippleHover(true)
-            .create();
+        MaterialRippleLayout materialRippleLayout = MaterialRippleLayout.on(view)
+                .rippleColor(Color.BLACK)
+                .rippleAlpha(0.2f)
+                .rippleHover(true)
+                .create();
+        materialRippleLayout.setRippleBackgroundDrawable(R.drawable.shape_gradient_ripple);
+
 
         view.setOnLongClickListener(this);
         view.setOnClickListener(this);
     }
 
-    @Override public void onClick(View v) {
+    @Override
+    public void onClick(View v) {
         Toast.makeText(this, "Short click", Toast.LENGTH_SHORT).show();
     }
 
-    @Override public boolean onLongClick(View v) {
+    @Override
+    public boolean onLongClick(View v) {
         if (v.getId() == R.id.ripple_layout_1) {
             Toast.makeText(this, "Long click not consumed", Toast.LENGTH_SHORT).show();
             return false;

@@ -570,6 +570,11 @@ public class MaterialRippleLayout extends FrameLayout {
         rippleBackground.setBounds(bounds);
         invalidate();
     }
+    public void setRippleBackgroundDrawable(int drawable){
+        rippleBackground = getResources().getDrawable(drawable);
+        rippleBackground.setBounds(bounds);
+        invalidate();
+    }
 
     public void setRippleHover(boolean rippleHover) {
         this.rippleHover = rippleHover;
